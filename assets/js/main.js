@@ -255,9 +255,12 @@ function initContactForm() {
       form.reset();
       status.textContent = "Thank you! We received your message and will reply soon.";
       status.classList.add("success");
-    } catch {
-      status.textContent = "The message could not be sent. Please contact us on WhatsApp instead.";
+    } catch (err) {
+      // Show FormSubmit's own reply (e.g. "This form needs Activation…") so setup problems are visible
+      const detail = err && err.message && !/^Failed to fetch|^HTTP \d/.test(err.message) ? ` (${err.message})` : "";
+      status.textContent = `The message could not be sent${detail}. Please contact us on WhatsApp instead.`;
       status.classList.add("error");
+      console.error("Contact form error:", err);
     } finally {
       button.disabled = false;
     }
