@@ -6,7 +6,7 @@
 const SITE_CONFIG = {
   contacts: [
     { country: "Somalia", display: "+252 61 612 6571", whatsapp: "252616126571" },
-    { country: "Kenya",   display: "+254 769 506 536", whatsapp: "254769506536" },
+    { country: "Kenya",   display: "+254 726 219 559", whatsapp: "254726219559" },
   ],
   // Contact form messages are delivered to this inbox (via FormSubmit.co).
   formEmail: "smartanalysis15@gmail.com",
@@ -176,20 +176,19 @@ function initScrollEffects() {
     new IntersectionObserver((entries) => entries.forEach((e) => onRatio(e.intersectionRatio, e)), { threshold: steps(n) }).observe(el);
   };
 
-  // Hero card: tilted when partly visible, flat when fully on screen
-  const card = document.querySelector(".chat-card");
+  // Hero visual: tilted when partly visible, flat when fully on screen
+  const card = document.querySelector(".scene");
   watch(document.querySelector(".preview"), (r) => {
     const t = Math.min(1, r / 0.85);
     card.style.setProperty("--tilt", `${(20 * (1 - t)).toFixed(2)}deg`);
     card.style.setProperty("--zoom", (0.92 + 0.08 * t).toFixed(3));
   });
 
-  // Hero background glow and chips drift as the hero leaves the screen
+  // Hero background glow drifts as the hero leaves the screen
   const hero = document.querySelector(".hero");
   watch(hero, (r, e) => {
     const out = e.boundingClientRect.top < 0 ? 1 - r : 0;
     hero.style.setProperty("--py", `${(out * 260).toFixed(1)}px`);
-    hero.style.setProperty("--chip-y", `${(-out * 120).toFixed(1)}px`);
   });
 
   // Steps line fills as the steps come into view

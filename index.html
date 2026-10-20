@@ -51,7 +51,7 @@
     "areaServed": ["Somalia", "Kenya"],
     "contactPoint": [
       { "@type": "ContactPoint", "telephone": "+252616126571", "contactType": "customer service", "areaServed": "SO" },
-      { "@type": "ContactPoint", "telephone": "+254769506536", "contactType": "customer service", "areaServed": "KE" }
+      { "@type": "ContactPoint", "telephone": "+254726219559", "contactType": "customer service", "areaServed": "KE" }
     ]
   }
   </script>
@@ -109,13 +109,134 @@
           <a href="#contact" class="btn btn-ghost"><i data-lucide="message-circle"></i> Contact Us</a>
         </div>
 
-        <!-- Illustration of a typical deliverable (pure HTML/CSS, sample figures only) -->
-        <div class="preview load" style="--d:5" role="img" aria-label="Illustrative example of a Smart Analysis performance report with KPIs, a branch comparison chart, a finding and a recommendation. Sample figures only.">
-          <span class="chip chip-a" aria-hidden="true"><i data-lucide="layout-dashboard"></i> KPI dashboards</span>
-          <span class="chip chip-b" aria-hidden="true"><i data-lucide="search-check"></i> Data quality checks</span>
-          <span class="chip chip-c" aria-hidden="true"><i data-lucide="lightbulb"></i> Recommendations</span>
+        <!-- Hero visual: animated illustration of the team at work + sample report (illustration and sample figures only) -->
+        <div class="preview load" style="--d:5">
+          <div class="scene">
+            <figure class="office">
+              <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMax meet" role="img" aria-labelledby="office-title">
+                <title id="office-title">Illustration of the Smart Analysis team in the office, reviewing a performance dashboard together</title>
+                <!-- Wall, floor -->
+                <rect width="640" height="440" fill="#f7f2e4" />
+                <rect y="362" width="640" height="78" fill="#eee5cc" />
+                <rect y="360" width="640" height="3" fill="#e2d6b4" />
 
-          <div class="chat-card">
+                <!-- Window with skyline and drifting cloud -->
+                <rect x="24" y="40" width="124" height="172" rx="8" fill="#ffffff" stroke="#e4dabd" stroke-width="4" />
+                <rect x="30" y="46" width="112" height="160" rx="4" fill="#fdf7e3" />
+                <g class="o-cloud"><ellipse cx="66" cy="76" rx="18" ry="7" fill="#ffffff" /><ellipse cx="78" cy="71" rx="11" ry="7" fill="#ffffff" /></g>
+                <g fill="#ecdba6">
+                  <rect x="34" y="146" width="18" height="60" /><rect x="56" y="116" width="14" height="90" />
+                  <rect x="74" y="156" width="22" height="50" /><rect x="100" y="130" width="16" height="76" /><rect x="120" y="150" width="18" height="56" />
+                </g>
+                <rect x="84" y="46" width="4" height="160" fill="#e4dabd" /><rect x="30" y="124" width="112" height="4" fill="#e4dabd" />
+
+                <!-- Company sign -->
+                <rect x="490" y="46" width="134" height="40" rx="9" fill="#ffffff" stroke="#e6dcc3" stroke-width="2" />
+                <image href="assets/images/logo-icon.png" x="498" y="52" width="20" height="28" />
+                <text x="523" y="71" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="11.5" font-weight="800" fill="#0b0b0b">Smart <tspan fill="#d3af37">Analysis</tspan></text>
+
+                <!-- Wall screen with animated dashboard -->
+                <rect x="180" y="34" width="292" height="178" rx="12" fill="#0b0b0b" />
+                <rect x="192" y="46" width="268" height="154" rx="6" fill="#1b1a17" />
+                <text x="204" y="64" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="10" font-weight="700" fill="#d3af37">Performance dashboard</text>
+                <g font-family="Inter, system-ui, sans-serif">
+                  <rect x="204" y="72" width="76" height="28" rx="5" fill="#2a2823" /><text x="210" y="83" font-size="6.5" fill="#9b9586">Revenue vs target</text><text x="210" y="95" font-size="10" font-weight="700" fill="#ffffff">94%</text>
+                  <rect x="288" y="72" width="76" height="28" rx="5" fill="#2a2823" /><text x="294" y="83" font-size="6.5" fill="#9b9586">Stock-outs</text><text x="294" y="95" font-size="10" font-weight="700" fill="#ffffff">27</text>
+                  <rect x="372" y="72" width="76" height="28" rx="5" fill="#2a2823" /><text x="378" y="83" font-size="6.5" fill="#9b9586">Late deliveries</text><text x="378" y="95" font-size="10" font-weight="700" fill="#ffffff">11%</text>
+                </g>
+                <rect x="204" y="188" width="244" height="1.5" fill="#3a372f" />
+                <g class="o-bars">
+                  <rect x="208" y="148" width="18" height="40" rx="3" fill="#5c5646" />
+                  <rect x="236" y="126" width="18" height="62" rx="3" fill="#5c5646" />
+                  <rect x="264" y="140" width="18" height="48" rx="3" fill="#5c5646" />
+                  <rect x="292" y="110" width="18" height="78" rx="3" fill="#d3af37" />
+                  <rect x="320" y="132" width="18" height="56" rx="3" fill="#5c5646" />
+                  <rect x="348" y="118" width="18" height="70" rx="3" fill="#5c5646" />
+                </g>
+                <polyline class="o-line" points="384,176 397,164 410,169 423,150 436,142 448,124" fill="none" stroke="#d3af37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle class="o-dot" cx="448" cy="124" r="3.5" fill="#d3af37" />
+
+                <!-- Plant -->
+                <g class="o-plant">
+                  <ellipse cx="584" cy="290" rx="9" ry="26" fill="#7c9a63" transform="rotate(-28 584 300)" />
+                  <ellipse cx="600" cy="282" rx="9" ry="30" fill="#6a8a53" />
+                  <ellipse cx="614" cy="292" rx="9" ry="25" fill="#7c9a63" transform="rotate(26 614 302)" />
+                </g>
+                <path d="M578 318 h44 l-6 44 h-32 z" fill="#0b0b0b" />
+
+                <!-- Presenter pointing at the screen -->
+                <g class="o-presenter">
+                  <rect x="500" y="300" width="13" height="62" rx="6" fill="#2b2620" />
+                  <rect x="517" y="300" width="13" height="62" rx="6" fill="#2b2620" />
+                  <ellipse cx="505" cy="364" rx="10" ry="4" fill="#0b0b0b" /><ellipse cx="526" cy="364" rx="10" ry="4" fill="#0b0b0b" />
+                  <rect x="492" y="218" width="46" height="90" rx="16" fill="#d3af37" />
+                  <path d="M506 218 L515 240 L524 218 Z" fill="#ffffff" />
+                  <path d="M534 234 L542 290" stroke="#d3af37" stroke-width="11" stroke-linecap="round" />
+                  <circle cx="542" cy="294" r="6" fill="#8d5a3b" />
+                  <rect x="509" y="206" width="12" height="14" rx="4" fill="#7d4f33" />
+                  <g class="o-head-p">
+                    <circle cx="515" cy="194" r="17" fill="#8d5a3b" />
+                    <path d="M498 192 a17 17 0 0 1 34 -2 q-10 -9 -22 -4 q-6 2 -12 6 z" fill="#1f1a15" />
+                  </g>
+                  <g class="o-arm">
+                    <path d="M497 234 L466 208" stroke="#d3af37" stroke-width="11" stroke-linecap="round" />
+                    <circle cx="463" cy="205" r="6" fill="#8d5a3b" />
+                  </g>
+                </g>
+
+                <!-- Team seated at the desk -->
+                <g class="o-person o-p1">
+                  <path d="M80 320 Q80 270 115 268 Q150 270 150 320 Z" fill="#0b0b0b" />
+                  <rect x="109" y="256" width="12" height="14" rx="4" fill="#5f3a25" />
+                  <g class="o-head"><circle cx="115" cy="246" r="17" fill="#6e432b" /><path d="M98 244 a17 17 0 0 1 34 0 q-8 -6 -17 -6 q-9 0 -17 6 z" fill="#15110d" /></g>
+                </g>
+                <g class="o-person o-p2">
+                  <path d="M220 320 Q220 272 255 270 Q290 272 290 320 Z" fill="#fffaf0" stroke="#e6dcc3" stroke-width="2" />
+                  <g class="o-head">
+                    <path d="M233 248 Q230 286 255 290 Q280 286 277 248 Z" fill="#b8952a" />
+                    <circle cx="255" cy="244" r="22" fill="#b8952a" />
+                    <ellipse cx="255" cy="247" rx="12" ry="14" fill="#a46a45" />
+                  </g>
+                </g>
+                <g class="o-person o-p3">
+                  <path d="M360 320 Q360 270 395 268 Q430 270 430 320 Z" fill="#5d5a52" />
+                  <rect x="389" y="256" width="12" height="14" rx="4" fill="#7d4f33" />
+                  <g class="o-head">
+                    <circle cx="395" cy="246" r="17" fill="#8d5a3b" />
+                    <g fill="#1f1a15"><circle cx="383" cy="234" r="7" /><circle cx="392" cy="229" r="7" /><circle cx="402" cy="230" r="7" /><circle cx="409" cy="237" r="6" /></g>
+                    <g fill="none" stroke="#1f1a15" stroke-width="1.6"><circle cx="389" cy="248" r="4.5" /><circle cx="401" cy="248" r="4.5" /><path d="M393.5 248 h3" /></g>
+                  </g>
+                </g>
+
+                <!-- Insight bubble and rising data dots -->
+                <g class="o-bubble">
+                  <rect x="276" y="198" width="66" height="24" rx="12" fill="#ffffff" stroke="#e6dcc3" stroke-width="1.5" />
+                  <rect x="286" y="212" width="4" height="5" fill="#d3af37" /><rect x="292" y="208" width="4" height="9" fill="#d3af37" /><rect x="298" y="204" width="4" height="13" fill="#d3af37" />
+                  <text x="307" y="214" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#131313">Insight</text>
+                </g>
+                <g fill="#d3af37">
+                  <circle class="o-spark" cx="115" cy="282" r="3" /><circle class="o-spark s2" cx="395" cy="282" r="3" /><circle class="o-spark s3" cx="255" cy="282" r="2.5" />
+                </g>
+
+                <!-- Laptops (backs facing us) and mug -->
+                <g>
+                  <path d="M85 286 h60 l4 32 h-68 z" fill="#ebe6da" stroke="#d6cfba" stroke-width="1.5" /><circle class="o-logo" cx="115" cy="302" r="4" fill="#d3af37" />
+                  <path d="M225 286 h60 l4 32 h-68 z" fill="#ebe6da" stroke="#d6cfba" stroke-width="1.5" /><circle class="o-logo l2" cx="255" cy="302" r="4" fill="#d3af37" />
+                  <path d="M365 286 h60 l4 32 h-68 z" fill="#ebe6da" stroke="#d6cfba" stroke-width="1.5" /><circle class="o-logo l3" cx="395" cy="302" r="4" fill="#d3af37" />
+                </g>
+                <rect x="176" y="302" width="15" height="17" rx="3" fill="#d3af37" />
+                <path d="M191 306 q6 0 6 5 q0 5 -6 5" fill="none" stroke="#d3af37" stroke-width="2.5" />
+                <g fill="none" stroke="#c9bfa4" stroke-width="2" stroke-linecap="round">
+                  <path class="o-steam" d="M181 296 q-3 -5 0 -10 q3 -5 0 -10" /><path class="o-steam st2" d="M187 296 q-3 -5 0 -10 q3 -5 0 -10" />
+                </g>
+
+                <!-- Desk -->
+                <rect x="40" y="318" width="430" height="14" rx="6" fill="#2b2620" />
+                <rect x="58" y="332" width="394" height="30" fill="#3b342b" />
+              </svg>
+            </figure>
+
+            <div class="chat-card" role="img" aria-label="Illustrative example of a Smart Analysis performance report with KPIs, a branch comparison chart, a finding and a recommendation. Sample figures only.">
             <div class="chat-head">
               <img src="assets/images/logo-icon.png" alt="" width="20" height="28" />
               <span>Quarterly performance review</span>
@@ -141,6 +262,7 @@
                 <p class="note note-action"><i data-lucide="lightbulb"></i><span><b>Recommendation:</b> Review Branch D's reorder levels and supplier lead times.</span></p>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -321,11 +443,11 @@
                 <p>WhatsApp &amp; phone</p>
               </div>
             </div>
-            <p class="number" data-contact="1" data-field="display">+254 769 506 536</p>
+            <p class="number" data-contact="1" data-field="display">+254 726 219 559</p>
             <div class="qr" data-qr="1" role="img" aria-label="QR code: scan to chat with Smart Analysis Kenya on WhatsApp"></div>
             <p class="qr-label">Scan to chat with us on WhatsApp</p>
             <div class="contact-actions">
-              <a class="btn btn-whatsapp" data-contact="1" data-field="whatsapp" href="https://wa.me/254769506536" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> WhatsApp</a>
+              <a class="btn btn-whatsapp" data-contact="1" data-field="whatsapp" href="https://wa.me/254726219559" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> WhatsApp</a>
               <button type="button" class="btn btn-light copy-btn" data-contact="1" data-field="copy"><i data-lucide="copy"></i> <span>Copy number</span></button>
             </div>
           </article>
@@ -385,7 +507,7 @@
         <h4>Contact</h4>
         <ul>
           <li><a href="https://wa.me/252616126571" data-contact="0" data-field="whatsapp" target="_blank" rel="noopener">Somalia: <span data-contact="0" data-field="display">+252 61 612 6571</span></a></li>
-          <li><a href="https://wa.me/254769506536" data-contact="1" data-field="whatsapp" target="_blank" rel="noopener">Kenya: <span data-contact="1" data-field="display">+254 769 506 536</span></a></li>
+          <li><a href="https://wa.me/254726219559" data-contact="1" data-field="whatsapp" target="_blank" rel="noopener">Kenya: <span data-contact="1" data-field="display">+254 726 219 559</span></a></li>
           <li><a href="#contact">Contact form</a></li>
         </ul>
       </div>
