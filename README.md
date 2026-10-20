@@ -13,12 +13,13 @@ robots.txt / sitemap.xml     SEO
 ```
 
 ## Edit checklist
-1. `assets/js/main.js` → `SITE_CONFIG`: product name, phone, WhatsApp number (digits only, with country code), email.
+1. `assets/js/main.js` → `SITE_CONFIG`: WhatsApp numbers (digits only, with country code) and the inbox for form messages.
    The WhatsApp QR code regenerates automatically.
 2. `index.html` → office addresses (search for `[Street address]`), social links in the footer (`href="#"`),
    unique-feature cards (search for `UNIQUE FEATURES`).
 3. Replace `https://www.example.com` in `index.html`, `robots.txt` and `sitemap.xml` with your domain.
-4. Contact form: see `initContactForm()` in `main.js` (Formspree / Netlify Forms instructions included).
+4. Contact form: messages go to `formEmail` in `SITE_CONFIG` (`assets/js/main.js`) via FormSubmit.co.
+   The first message from the live site sends an "Activate form" email to that inbox. Click it once.
 
 ## Run locally
 ```

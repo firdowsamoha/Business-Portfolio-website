@@ -8,7 +8,8 @@ const SITE_CONFIG = {
     { country: "Somalia", display: "+252 61 612 6571", whatsapp: "252616126571" },
     { country: "Kenya",   display: "+254 769 506 536", whatsapp: "254769506536" },
   ],
-  email: "info@example.com",
+  // Contact form messages are delivered to this inbox (via FormSubmit.co).
+  formEmail: "missauditor71@gmail.com",
 };
 
 /* -------- Apply config to the page -------- */
@@ -20,7 +21,6 @@ function applyConfig() {
     if (el.dataset.field === "whatsapp") el.href = `https://wa.me/${c.whatsapp}`;
     if (el.dataset.field === "copy") el.dataset.copy = `+${c.whatsapp}`;
   });
-  document.querySelectorAll('[data-config="email"]').forEach((el) => (el.textContent = SITE_CONFIG.email));
 
   // "Ask about this" links on service cards open WhatsApp with a ready-made message
   document.querySelectorAll("[data-whatsapp-text]").forEach((a) => {
@@ -210,12 +210,13 @@ function initScrollEffects() {
 }
 
 /* -------- Contact form --------
-   Front-end only for now: it checks the fields and shows a thank-you message.
+   Sends each message to SITE_CONFIG.formEmail using FormSubmit.co (free, no server needed).
 
-   TO CONNECT A FORM SERVICE, replace the "simulate" block below:
-   • Formspree:     fetch("https://formspree.io/f/YOUR_ID", { method: "POST", body: data, headers: { Accept: "application/json" } })
-   • Netlify Forms: add  data-netlify="true" name="contact"  to the <form> tag in index.html.
-   • Web3Forms / Getform / your own API: POST the FormData the same way.
+   FIRST-TIME SETUP: the very first message sent from the live site makes FormSubmit
+   email an "Activate form" link to that inbox. Click it once; after that every
+   message arrives by email. Replying to a message replies to the customer.
+   Optional: after activating, FormSubmit gives you a random alias string; put it in
+   formEmail instead of the address so the address isn't visible in the page source.
 -------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById("contact-form");
@@ -239,10 +240,18 @@ function initContactForm() {
     const data = new FormData(form);
 
     try {
-      // ---- simulate (replace with a real fetch to your form service) ----
-      await new Promise((resolve) => setTimeout(resolve, 600));
-      console.info("Contact form submission:", Object.fromEntries(data));
-      // -------------------------------------------------------------------
+      const payload = Object.fromEntries(data);
+      payload._subject = `New website message from ${payload.name}${payload.company ? ` (${payload.company})` : ""}`;
+      payload._template = "table";
+      payload._captcha = "false";
+
+      const res = await fetch(`https://formsubmit.co/ajax/${SITE_CONFIG.formEmail}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok || String(result.success) !== "true") throw new Error(result.message || `HTTP ${res.status}`);
       form.reset();
       status.textContent = "Thank you! We received your message and will reply soon.";
       status.classList.add("success");

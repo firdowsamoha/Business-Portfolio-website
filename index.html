@@ -314,16 +314,17 @@
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
             <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+252 / +254" /></div>
             <div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" rows="4" required></textarea></div>
+            <!-- Spam trap: hidden from people, bots fill it in and FormSubmit drops the message -->
+            <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button type="submit" class="btn btn-primary btn-block">Send message <i data-lucide="send"></i></button>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
 
-        <!-- ✏️ Replace with your email and office addresses -->
+        <!-- ✏️ Add street addresses here when you have them -->
         <ul class="contact-extra reveal">
-          <li><i data-lucide="mail"></i> <span data-config="email">info@example.com</span></li>
-          <li><i data-lucide="map-pin"></i> [Street address], Mogadishu, Somalia</li>
-          <li><i data-lucide="map-pin"></i> [Street address], Nairobi, Kenya</li>
+          <li><i data-lucide="map-pin"></i> Mogadishu, Somalia</li>
+          <li><i data-lucide="map-pin"></i> Nairobi, Kenya</li>
         </ul>
       </div>
     </section>

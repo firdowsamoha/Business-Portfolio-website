@@ -276,6 +276,7 @@ p { margin: 0 0 1em; }
 .field textarea { resize: vertical; min-height: 96px; }
 .field input:focus, .field textarea:focus { outline: none; border-color: var(--gold); background: var(--white); box-shadow: 0 0 0 4px rgba(211, 175, 55, 0.18); }
 .field .invalid { border-color: #c0392b; }
+.honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .form-status { margin: 12px 0 0; font-size: 0.92rem; font-weight: 500; min-height: 1.4em; }
 .form-status.success { color: #1d7a42; }
 .form-status.error { color: #b03a2e; }
