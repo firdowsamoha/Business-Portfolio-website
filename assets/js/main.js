@@ -9,7 +9,7 @@ const SITE_CONFIG = {
     { country: "Kenya",   display: "+254 769 506 536", whatsapp: "254769506536" },
   ],
   // Contact form messages are delivered to this inbox (via FormSubmit.co).
-  formEmail: "missauditor71@gmail.com",
+  formEmail: "smartanalysis15@gmail.com",
 };
 
 /* -------- Apply config to the page -------- */
