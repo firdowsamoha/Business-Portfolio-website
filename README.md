@@ -6,7 +6,7 @@ Single-page, static website (HTML + CSS + vanilla JS). No build step.
 ```
 index.html              All page content, split into clearly commented sections
 assets/css/styles.css   All styling (brand colours & fonts in :root at the top)
-assets/js/main.js       SITE_CONFIG (product name, phone, WhatsApp, email), nav, animations, QR code, form
+assets/js/main.js       SITE_CONFIG (WhatsApp numbers, form inbox), nav, animations, QR codes, contact form
 assets/images/          Logos, favicons, social share image (og-image.jpg)
 netlify.toml / vercel.json   Deploy config
 robots.txt / sitemap.xml     SEO
