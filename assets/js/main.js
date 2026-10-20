@@ -75,6 +75,37 @@ function initCopyButtons() {
   });
 }
 
+/* -------- Light / dark mode --------
+   The <head> script already applied the saved choice (or the device setting)
+   before the page painted. This wires up the toggle button and keeps
+   following the device setting until the visitor picks a theme themselves.
+-------------------------------------------------------------- */
+function initThemeToggle() {
+  const root = document.documentElement;
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  const media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  const stored = () => { try { return localStorage.getItem("sa-theme"); } catch { return null; } };
+
+  const apply = (theme) => {
+    root.setAttribute("data-theme", theme);
+    const next = theme === "dark" ? "light" : "dark";
+    btn.setAttribute("aria-label", `Switch to ${next} mode`);
+    btn.title = `Switch to ${next} mode`;
+  };
+  apply(root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+
+  btn.addEventListener("click", () => {
+    const theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    apply(theme);
+    try { localStorage.setItem("sa-theme", theme); } catch {}
+  });
+
+  if (media && media.addEventListener) {
+    media.addEventListener("change", (e) => { if (!stored()) apply(e.matches ? "dark" : "light"); });
+  }
+}
+
 /* -------- Navbar: shadow on scroll + mobile menu -------- */
 function initNavbar() {
   const navbar = document.getElementById("navbar");
@@ -258,6 +289,7 @@ function initContactForm() {
 /* -------- Init -------- */
 document.addEventListener("DOMContentLoaded", () => {
   applyConfig();
+  initThemeToggle();
   if (window.lucide) lucide.createIcons();
   renderQRCodes();
   initCopyButtons();
