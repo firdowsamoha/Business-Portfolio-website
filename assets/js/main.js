@@ -176,14 +176,6 @@ function initScrollEffects() {
     new IntersectionObserver((entries) => entries.forEach((e) => onRatio(e.intersectionRatio, e)), { threshold: steps(n) }).observe(el);
   };
 
-  // Hero visual: tilted when partly visible, flat when fully on screen
-  const card = document.querySelector(".scene");
-  watch(document.querySelector(".preview"), (r) => {
-    const t = Math.min(1, r / 0.85);
-    card.style.setProperty("--tilt", `${(20 * (1 - t)).toFixed(2)}deg`);
-    card.style.setProperty("--zoom", (0.92 + 0.08 * t).toFixed(3));
-  });
-
   // Hero background glow drifts as the hero leaves the screen
   const hero = document.querySelector(".hero");
   watch(hero, (r, e) => {
@@ -199,13 +191,6 @@ function initScrollEffects() {
   document.querySelectorAll(".section-head").forEach((head) =>
     watch(head, (r) => head.style.setProperty("--lift", `${((1 - r) * 40).toFixed(1)}px`), 20)
   );
-
-  // Hero chart bars regrow whenever the chart scrolls back into view
-  const chart = document.querySelector(".mini-chart");
-  watch(chart, (r) => {
-    if (r === 0) chart.classList.remove("play");
-    else if (r > 0.6) chart.classList.add("play");
-  }, 10);
 }
 
 /* -------- Contact form --------
