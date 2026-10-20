@@ -160,28 +160,24 @@ p { margin: 0 0 1em; }
 
 /* ---------- Hero team visual ----------
    One transparent image. On load it fades up and scales from 95% to 100%,
-   while five clipped bands of the same image (one per team member) rise in
-   one after another; the single full image then takes over so nothing seams.
-   After that the whole group floats gently. */
+   then the whole group floats gently. */
 .team-visual { position: relative; width: 100%; max-width: 680px; margin: 0 auto; padding: 28px 0 12px; }
 .team-glow {
   position: absolute; z-index: 0; inset: 0 -8% -4%; pointer-events: none;
   background: radial-gradient(closest-side, rgba(211, 175, 55, 0.30), rgba(211, 175, 55, 0.12) 55%, rgba(211, 175, 55, 0) 100%);
   filter: blur(28px); animation: team-glow 9s ease-in-out infinite;
 }
-.team-float { position: relative; z-index: 1; animation: team-float 6.5s ease-in-out 2s infinite; will-change: transform; }
+.team-float { position: relative; z-index: 1; animation: team-float 6.5s ease-in-out 1.6s infinite; will-change: transform; }
 .team-stage {
   position: relative; aspect-ratio: 1280 / 799; max-width: 100%;
-  animation: team-enter 1.2s var(--ease) 0.2s both;
+  animation: team-enter 1.3s var(--ease) 0.25s both;
   /* soften the straight cuts: desk at the bottom, plant on the left, sleeve on the right */
   -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 5%, #000 92%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image: linear-gradient(to bottom, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 5%, #000 92%, transparent 100%);
   mask-composite: intersect;
 }
-.team-band, .team-full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-.team-band { clip-path: inset(0 var(--r) 0 var(--l)); animation: team-band 0.9s var(--ease) both; animation-delay: calc(0.35s + var(--i) * 0.14s); }
-.team-full { opacity: 0; animation: team-full 0.35s linear 1.85s forwards; }
+.team-img { display: block; width: 100%; height: 100%; object-fit: contain; }
 
 .team-dots span { position: absolute; z-index: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: 0; animation: team-dot 7s ease-in-out infinite; }
 .team-dots span:nth-child(1) { top: 10%; left: 38%; }
@@ -204,8 +200,6 @@ p { margin: 0 0 1em; }
 .insight-c { bottom: 3%; left: 30%; animation-delay: 2.3s, 4.5s; }
 
 @keyframes team-enter { from { opacity: 0; transform: translateY(28px) scale(0.95); } to { opacity: 1; transform: none; } }
-@keyframes team-band { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
-@keyframes team-full { to { opacity: 1; } }
 @keyframes team-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @keyframes team-card { from { opacity: 0; transform: translateY(12px) scale(0.92); } to { opacity: 1; transform: none; } }
 @keyframes team-glow { 0%, 100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
@@ -431,7 +425,5 @@ p { margin: 0 0 1em; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal, .reveal[data-anim], .why li, .service-icon, .step-num, .section-head .tag, .word { transform: none !important; opacity: 1 !important; }
   .section-head { translate: none; }
-  .team-band { display: none; }
-  .team-full { opacity: 1 !important; }
   .team-glow { filter: blur(28px); }
 }
